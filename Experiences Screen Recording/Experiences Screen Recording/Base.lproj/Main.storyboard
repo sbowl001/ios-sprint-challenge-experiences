@@ -18,10 +18,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="syg-iZ-97q">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugz-SU-zfF">
-                                <rect key="frame" x="308" y="798" width="65" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugz-SU-zfF">
+                                <rect key="frame" x="177.5" y="798" width="59" height="33"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="LgH-AV-vgH"/>
+                                    <constraint firstAttribute="height" constant="33" id="gXW-md-hRm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Add XP">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,8 +39,10 @@
                         <constraints>
                             <constraint firstItem="syg-iZ-97q" firstAttribute="leading" secondItem="PSB-XP-l72" secondAttribute="leading" id="JhD-kg-7WL"/>
                             <constraint firstItem="PSB-XP-l72" firstAttribute="trailing" secondItem="syg-iZ-97q" secondAttribute="trailing" id="LWj-lI-596"/>
+                            <constraint firstItem="ugz-SU-zfF" firstAttribute="centerX" secondItem="Ntf-NR-UCs" secondAttribute="centerX" id="T3t-yW-oLB"/>
                             <constraint firstItem="PSB-XP-l72" firstAttribute="bottom" secondItem="syg-iZ-97q" secondAttribute="bottom" id="Uqe-xW-oss"/>
                             <constraint firstItem="syg-iZ-97q" firstAttribute="top" secondItem="PSB-XP-l72" secondAttribute="top" id="fPQ-6Q-Edx"/>
+                            <constraint firstItem="PSB-XP-l72" firstAttribute="bottom" secondItem="ugz-SU-zfF" secondAttribute="bottom" constant="31" id="s7A-ml-SdU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PSB-XP-l72"/>
                     </view>
@@ -86,7 +91,7 @@
                                 <rect key="frame" x="40" y="164" width="334" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1KU-jS-zde">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1KU-jS-zde">
                                 <rect key="frame" x="157" y="453" width="219" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
