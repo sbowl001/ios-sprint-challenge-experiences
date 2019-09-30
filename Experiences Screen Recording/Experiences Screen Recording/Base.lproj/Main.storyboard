@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Display View Controller-->
         <scene sceneID="Sju-78-pAD">
             <objects>
-                <viewController id="0UV-G8-Fsy" sceneMemberID="viewController">
+                <viewController id="0UV-G8-Fsy" customClass="MapViewDisplayViewController" customModule="Experiences_Screen_Recording" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ntf-NR-UCs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,8 @@
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7wm-wW-dcD" kind="show" id="GAy-8V-6wJ"/>
+                                    <action selector="addButtonTapped:" destination="0UV-G8-Fsy" eventType="touchUpInside" id="GOr-dz-W2v"/>
+                                    <segue destination="7wm-wW-dcD" kind="show" identifier="toAddXP" id="GAy-8V-6wJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,6 +42,9 @@
                         <viewLayoutGuide key="safeArea" id="PSB-XP-l72"/>
                     </view>
                     <navigationItem key="navigationItem" id="G8i-yI-8kN"/>
+                    <connections>
+                        <outlet property="mapView" destination="syg-iZ-97q" id="ba8-fe-zSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJI-kj-LY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +70,7 @@
                                 <state key="normal" title="Add Poster Image "/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmi-0L-FJ4">
-                                <rect key="frame" x="165" y="456" width="85" height="30"/>
+                                <rect key="frame" x="165" y="498" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record ">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,6 +80,17 @@
                                 <rect key="frame" x="40" y="164" width="334" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1KU-jS-zde">
+                                <rect key="frame" x="157" y="453" width="219" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monochrome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyO-Ih-Qkk">
+                                <rect key="frame" x="40" y="461" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="s51-Xo-M1h"/>
@@ -83,7 +98,7 @@
                     <navigationItem key="navigationItem" title="New Experience" id="Xwy-sU-TZS">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="zDa-rc-iEb">
                             <connections>
-                                <segue destination="YiO-NJ-0Fw" kind="show" id="KdR-eE-0UD"/>
+                                <segue destination="YiO-NJ-0Fw" kind="show" identifier="toAddVid" id="KdR-eE-0UD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -92,34 +107,36 @@
             </objects>
             <point key="canvasLocation" x="1928.985507246377" y="92.410714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Landing Video View Controller-->
         <scene sceneID="kdQ-hM-Gle">
             <objects>
-                <viewController id="YiO-NJ-0Fw" sceneMemberID="viewController">
+                <viewController id="YiO-NJ-0Fw" customClass="LandingVideoViewController" customModule="Experiences_Screen_Recording" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aG1-7h-UpZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5tE-jp-CDF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ffM-ox-Yhp"/>
+                    <navigationItem key="navigationItem" id="ffM-ox-Yhp">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="YkE-Pn-hbZ"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="x7q-bT-H9M" kind="presentation" id="uOP-c9-nqP"/>
+                        <segue destination="x7q-bT-H9M" kind="presentation" identifier="RecordVideo" id="uOP-c9-nqP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejf-eY-Y8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2614" y="92"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="2vN-Ve-2ox">
             <objects>
-                <viewController id="x7q-bT-H9M" sceneMemberID="viewController">
+                <viewController id="x7q-bT-H9M" customClass="CameraViewController" customModule="Experiences_Screen_Recording" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5BC-VU-mhL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="994-mT-3f1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="994-mT-3f1" customClass="CameraPreviewView" customModule="Experiences_Screen_Recording" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWa-87-f80">

@@ -15,6 +15,7 @@
 		A3EC4B1023419DF6004AAD52 /* LandingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B0F23419DF6004AAD52 /* LandingVideoViewController.swift */; };
 		A3EC4B1323419E1D004AAD52 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1223419E1D004AAD52 /* CameraViewController.swift */; };
 		A3EC4B1523419E2E004AAD52 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */; };
+		A3EC4B1A2341A6DD004AAD52 /* MapViewDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A3EC4B0F23419DF6004AAD52 /* LandingVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVideoViewController.swift; sourceTree = "<group>"; };
 		A3EC4B1223419E1D004AAD52 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		A3EC4AFA2341953B004AAD52 /* Experiences Screen Recording */ = {
 			isa = PBXGroup;
 			children = (
+				A3EC4B182341A3CA004AAD52 /* Maps */,
 				A3EC4B1123419DFB004AAD52 /* Movie */,
 				A3EC4AFB2341953B004AAD52 /* AppDelegate.swift */,
 				A3EC4AFD2341953B004AAD52 /* SceneDelegate.swift */,
@@ -79,6 +82,14 @@
 				A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */,
 			);
 			path = Movie;
+			sourceTree = "<group>";
+		};
+		A3EC4B182341A3CA004AAD52 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */,
+			);
+			path = Maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3EC4AFC2341953B004AAD52 /* AppDelegate.swift in Sources */,
+				A3EC4B1A2341A6DD004AAD52 /* MapViewDisplayViewController.swift in Sources */,
 				A3EC4B1323419E1D004AAD52 /* CameraViewController.swift in Sources */,
 				A3EC4B1523419E2E004AAD52 /* CameraPreviewView.swift in Sources */,
 				A3EC4AFE2341953B004AAD52 /* SceneDelegate.swift in Sources */,
