@@ -16,6 +16,8 @@
 		A3EC4B1323419E1D004AAD52 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1223419E1D004AAD52 /* CameraViewController.swift */; };
 		A3EC4B1523419E2E004AAD52 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */; };
 		A3EC4B1A2341A6DD004AAD52 /* MapViewDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */; };
+		A3EC4B1C2341B392004AAD52 /* ImageAndRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1B2341B392004AAD52 /* ImageAndRecordViewController.swift */; };
+		A3EC4B1F2341B4E3004AAD52 /* Image+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1E2341B4E3004AAD52 /* Image+Scaling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A3EC4B1223419E1D004AAD52 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDisplayViewController.swift; sourceTree = "<group>"; };
+		A3EC4B1B2341B392004AAD52 /* ImageAndRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndRecordViewController.swift; sourceTree = "<group>"; };
+		A3EC4B1E2341B4E3004AAD52 /* Image+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Scaling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		A3EC4AFA2341953B004AAD52 /* Experiences Screen Recording */ = {
 			isa = PBXGroup;
 			children = (
+				A3EC4B1D2341B397004AAD52 /* Image and Audio */,
 				A3EC4B182341A3CA004AAD52 /* Maps */,
 				A3EC4B1123419DFB004AAD52 /* Movie */,
 				A3EC4AFB2341953B004AAD52 /* AppDelegate.swift */,
@@ -90,6 +95,15 @@
 				A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */,
 			);
 			path = Maps;
+			sourceTree = "<group>";
+		};
+		A3EC4B1D2341B397004AAD52 /* Image and Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A3EC4B1B2341B392004AAD52 /* ImageAndRecordViewController.swift */,
+				A3EC4B1E2341B4E3004AAD52 /* Image+Scaling.swift */,
+			);
+			path = "Image and Audio";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +182,8 @@
 				A3EC4B1323419E1D004AAD52 /* CameraViewController.swift in Sources */,
 				A3EC4B1523419E2E004AAD52 /* CameraPreviewView.swift in Sources */,
 				A3EC4AFE2341953B004AAD52 /* SceneDelegate.swift in Sources */,
+				A3EC4B1F2341B4E3004AAD52 /* Image+Scaling.swift in Sources */,
+				A3EC4B1C2341B392004AAD52 /* ImageAndRecordViewController.swift in Sources */,
 				A3EC4B1023419DF6004AAD52 /* LandingVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

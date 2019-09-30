@@ -53,7 +53,7 @@
         <!--New Experience-->
         <scene sceneID="Rc6-Sn-A0y">
             <objects>
-                <viewController id="7wm-wW-dcD" sceneMemberID="viewController">
+                <viewController id="7wm-wW-dcD" customClass="ImageAndRecordViewController" customModule="Experiences_Screen_Recording" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRG-7w-2zT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,6 +68,9 @@
                                 <rect key="frame" x="92" y="368" width="231" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Poster Image "/>
+                                <connections>
+                                    <action selector="addPosterImageTapped:" destination="7wm-wW-dcD" eventType="touchUpInside" id="Opb-zT-OTd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmi-0L-FJ4">
                                 <rect key="frame" x="165" y="498" width="85" height="30"/>
@@ -75,6 +78,9 @@
                                 <state key="normal" title="Record ">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="7wm-wW-dcD" eventType="touchUpInside" id="Odk-cn-rUq"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qke-QD-DcA">
                                 <rect key="frame" x="40" y="164" width="334" height="267"/>
@@ -83,6 +89,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1KU-jS-zde">
                                 <rect key="frame" x="157" y="453" width="219" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="monochromeSliderAction:" destination="7wm-wW-dcD" eventType="valueChanged" id="dkW-dU-SjO"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monochrome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyO-Ih-Qkk">
                                 <rect key="frame" x="40" y="461" width="107" height="21"/>
@@ -102,6 +111,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Qke-QD-DcA" id="b1B-QG-ag1"/>
+                        <outlet property="monochromeLabel" destination="iyO-Ih-Qkk" id="l3J-bI-jFV"/>
+                        <outlet property="monochromeSlider" destination="1KU-jS-zde" id="kHg-hP-L2a"/>
+                        <outlet property="titleLabel" destination="B7d-62-UNt" id="zfd-Ys-dkZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stk-5b-bbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
