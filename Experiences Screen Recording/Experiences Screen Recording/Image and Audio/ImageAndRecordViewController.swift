@@ -8,8 +8,9 @@
 
 import UIKit
 import Photos
+import AVFoundation
 
-class ImageAndRecordViewController: UIViewController {
+class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
     
     @IBOutlet weak var titleLabel: UITextField!
     
@@ -18,6 +19,9 @@ class ImageAndRecordViewController: UIViewController {
     @IBOutlet weak var monochromeLabel: UILabel!
     
     @IBOutlet weak var monochromeSlider: UISlider!
+    
+    @IBOutlet weak var recordLabel: UILabel!
+    @IBOutlet weak var recordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,35 @@ class ImageAndRecordViewController: UIViewController {
         self.presentImagePickerController()
     }
     @IBAction func recordButtonTapped(_ sender: Any) {
+        if recorder == nil {
+                guard let recordingURL = recordingURL else { return }
+                let settings = [
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                    AVSampleRateKey: 12000,
+                    AVNumberOfChannelsKey: 1,
+                    AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+                ]
+                
+                do {
+                    recorder = try AVAudioRecorder(url: recordingURL, settings: settings)
+//                    recorder = try AVAudioRecorder(url: self.saveAudio() ?? <#default value#>, settings: settings)
+                    recorder.delegate = self
+                    recorder.record()
+                    recordLabel.text = "Recording..."
+                    recordButton.setTitle("Stop", for: .normal)
+                } catch {
+                    NSLog("Error recording audio comment: \(error)")
+                }
+            } else {
+                
+                let time = round(recorder.currentTime * 100) / 100
+                
+                recordLabel.text = "Recording duration: \(time) seconds"
+                recorder.stop()
+                recorder = nil
+                recordButton.setTitle("Record", for: .normal)
+        }
+        
     }
     
     @IBAction func monochromeSliderAction(_ sender: Any) {
@@ -36,7 +69,7 @@ class ImageAndRecordViewController: UIViewController {
     }
   
     
-    //MARK: Private Func
+    //MARK: Private Image Func
       private func presentImagePickerController() {
             guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
                 else {
@@ -88,7 +121,40 @@ class ImageAndRecordViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
  
-    //MARK: Properties
+    private func savePhoto(){
+        //to ADD later
+        self.updateImage()
+        guard let originalImage = originalImage else {return}
+        let processedImage = self.image(byFiltering: originalImage)
+        
+        PHPhotoLibrary.requestAuthorization { (status) in
+            guard status == .authorized else {return }
+            
+            
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetCreationRequest.creationRequestForAsset(from: processedImage)
+            }) { (success, error) in
+                if let error = error {
+                    NSLog("error saving photo: \(error)")
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.presentSuccessfulSaveAlert()
+                }
+            }
+        }
+    }
+    
+    
+    
+    // MARK: Private Audio Func
+//    private func saveAudio() -> URL?{
+//        //To hook up to something later
+//      let fm = FileManager.default
+//             let documentsDirector = try! fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+//             return documentsDirector.appendingPathComponent(UUID().uuidString).appendingPathExtension("caf")
+//    }
+    //MARK: Properties Image
     
     var originalImage: UIImage? {
           didSet {
@@ -110,8 +176,21 @@ class ImageAndRecordViewController: UIViewController {
 
     private let context = CIContext(options: nil)
     private let filter = CIFilter(name: "CIColorMonochrome")!
+    
+    //MARK: Properties Audio
+    var session: AVAudioSession!
+    var recorder: AVAudioRecorder!
+
+    var recordingURL: URL? {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+               
+               return documentDirectory.appendingPathComponent("audioComment.m4a")
+    }
+     
 }
 
+
+    //MARK: Extension Image
 extension ImageAndRecordViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -45,6 +45,8 @@
 	<string>Main</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Requesting Access to photo library to add newly filtered images</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Requesting access to microphone in order to create a new audio recorder</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
