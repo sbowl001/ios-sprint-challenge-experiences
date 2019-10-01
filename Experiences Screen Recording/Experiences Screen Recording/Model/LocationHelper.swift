@@ -9,9 +9,9 @@
 import Foundation
 import CoreLocation
 
-class Location: NSObject, CLLocationManagerDelegate {
+class LocationHelper: NSObject, CLLocationManagerDelegate {
     
-    static let shared = Location()
+    static let shared = LocationHelper()
     
     override init() {
         super.init()

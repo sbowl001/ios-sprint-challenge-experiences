@@ -187,6 +187,8 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
 //    }
     //MARK: Properties Image
     
+     var experienceController: ExperienceController?
+    
     var originalImage: UIImage? {
           didSet {
               guard let originalImage = self.originalImage else {return}
