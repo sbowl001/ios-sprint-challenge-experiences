@@ -12,6 +12,14 @@ import AVFoundation
 
 class LandingVideoViewController: UIViewController {
 
+    
+   let locationHelper = LocationHelper()
+    
+    var experienceController: ExperienceController?
+    var recordingURL: URL?
+    var imageData: Data?
+    var videoURL: URL?
+    
    override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
             

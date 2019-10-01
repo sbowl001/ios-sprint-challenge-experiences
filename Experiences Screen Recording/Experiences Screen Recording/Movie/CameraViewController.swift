@@ -19,7 +19,7 @@ class CameraViewController: UIViewController {
     
     var captureSession: AVCaptureSession!
     var recordOutput: AVCaptureMovieFileOutput!
-    
+    var videoURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,6 +125,7 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
                 }
             }
         }
+        videoURL = outputFileURL
     }
     
     private func presentSuccessAlert() {
@@ -136,11 +137,21 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
         }
         alert.addAction(okAction)
         
-        let photosAction = UIAlertAction(title: "Open Photos", style: .default) { (_) in
-            UIApplication.shared.open(URL(string: "photos-redirect://")!, options: [:], completionHandler: nil)
+//        let photosAction = UIAlertAction(title: "Open Photos", style: .default) { (_) in
+//            UIApplication.shared.open(URL(string: "photos-redirect://")!, options: [:], completionHandler: nil)
+//        }
+//
+//        alert.addAction(photosAction)
+//        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RecordVideo" {
+            guard let destinationVC = segue.destination as? LandingVideoViewController else { return }
+            
+            destinationVC.videoURL = videoURL
+           
         }
-        
-        alert.addAction(photosAction)
-        self.present(alert, animated: true, completion: nil)
     }
 }

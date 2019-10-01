@@ -132,7 +132,11 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
             
             guard let outputCGImage = context.createCGImage(outputCIImage, from: outputCIImage.extent) else { return image}
             
-            return UIImage(cgImage: outputCGImage)
+            let filteredImage = UIImage(cgImage: outputCGImage)
+            imageData = filteredImage.jpegData(compressionQuality: 1)
+            
+            return filteredImage
+//            return UIImage(cgImage: outputCGImage)
         }
         
         private func updateImage() {
@@ -185,10 +189,24 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
 //             let documentsDirector = try! fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
 //             return documentsDirector.appendingPathComponent(UUID().uuidString).appendingPathExtension("caf")
 //    }
+    
+    //MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewVideoRecording" {
+            guard let destinationVC = segue.destination as? LandingVideoViewController else { return }
+            
+            destinationVC.experienceController = experienceController
+            destinationVC.recordingURL = recordingURL
+            destinationVC.imageData = imageData
+        }
+    }
+    
+    
+    
     //MARK: Properties Image
     
-     var experienceController: ExperienceController?
-    
+    var experienceController: ExperienceController?
+    var imageData: Data?
     var originalImage: UIImage? {
           didSet {
               guard let originalImage = self.originalImage else {return}
