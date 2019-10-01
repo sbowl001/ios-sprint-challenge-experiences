@@ -31,7 +31,7 @@ class MapViewDisplayViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         //remove annotations on the project , but why?
         //add annotations
-        mapView.removeAnnotations(mapView.annotations)
+//        mapView.removeAnnotations(mapView.annotations)
         let experiences = experienceController.experiences
         mapView.addAnnotations(experiences)
     }
@@ -49,8 +49,10 @@ class MapViewDisplayViewController: UIViewController, MKMapViewDelegate {
         
         guard let av = mapView.dequeueReusableAnnotationView(withIdentifier: annotationReuseIdentifier, for: experience) as? MKMarkerAnnotationView else {return nil}
         
-        av.titleVisibility = .adaptive
-        av.subtitleVisibility = .adaptive
+//        av.titleVisibility = .adaptive
+//        av.subtitleVisibility = .adaptive
+        av.markerTintColor = .blue
+        av.canShowCallout = true
         return av
     }
     
