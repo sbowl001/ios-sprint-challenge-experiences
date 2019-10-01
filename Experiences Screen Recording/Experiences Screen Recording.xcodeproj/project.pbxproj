@@ -17,6 +17,10 @@
 		A3EC4B1A2341A6DD004AAD52 /* MapViewDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */; };
 		A3EC4B1C2341B392004AAD52 /* ImageAndRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1B2341B392004AAD52 /* ImageAndRecordViewController.swift */; };
 		A3EC4B1F2341B4E3004AAD52 /* Image+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1E2341B4E3004AAD52 /* Image+Scaling.swift */; };
+		A3EC4B232342DEC2004AAD52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B222342DEC2004AAD52 /* SceneDelegate.swift */; };
+		A3EC4B252342DF7A004AAD52 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B242342DF7A004AAD52 /* Experience.swift */; };
+		A3EC4B282342E199004AAD52 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B272342E199004AAD52 /* LocationHelper.swift */; };
+		A3EC4B2A2342E204004AAD52 /* ExperienceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B292342E204004AAD52 /* ExperienceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDisplayViewController.swift; sourceTree = "<group>"; };
 		A3EC4B1B2341B392004AAD52 /* ImageAndRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndRecordViewController.swift; sourceTree = "<group>"; };
 		A3EC4B1E2341B4E3004AAD52 /* Image+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Scaling.swift"; sourceTree = "<group>"; };
+		A3EC4B222342DEC2004AAD52 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../../.Trash/SceneDelegate.swift; sourceTree = "<group>"; };
+		A3EC4B242342DF7A004AAD52 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		A3EC4B272342E199004AAD52 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		A3EC4B292342E204004AAD52 /* ExperienceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		A3EC4AFA2341953B004AAD52 /* Experiences Screen Recording */ = {
 			isa = PBXGroup;
 			children = (
+				A3EC4B262342DF84004AAD52 /* Model */,
 				A3EC4B1D2341B397004AAD52 /* Image and Audio */,
 				A3EC4B182341A3CA004AAD52 /* Maps */,
 				A3EC4B1123419DFB004AAD52 /* Movie */,
@@ -72,6 +81,7 @@
 				A3EC4B042341953C004AAD52 /* Assets.xcassets */,
 				A3EC4B062341953C004AAD52 /* LaunchScreen.storyboard */,
 				A3EC4B092341953C004AAD52 /* Info.plist */,
+				A3EC4B222342DEC2004AAD52 /* SceneDelegate.swift */,
 			);
 			path = "Experiences Screen Recording";
 			sourceTree = "<group>";
@@ -101,6 +111,16 @@
 				A3EC4B1E2341B4E3004AAD52 /* Image+Scaling.swift */,
 			);
 			path = "Image and Audio";
+			sourceTree = "<group>";
+		};
+		A3EC4B262342DF84004AAD52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3EC4B242342DF7A004AAD52 /* Experience.swift */,
+				A3EC4B272342E199004AAD52 /* LocationHelper.swift */,
+				A3EC4B292342E204004AAD52 /* ExperienceController.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,10 +196,14 @@
 			files = (
 				A3EC4AFC2341953B004AAD52 /* AppDelegate.swift in Sources */,
 				A3EC4B1A2341A6DD004AAD52 /* MapViewDisplayViewController.swift in Sources */,
+				A3EC4B232342DEC2004AAD52 /* SceneDelegate.swift in Sources */,
+				A3EC4B252342DF7A004AAD52 /* Experience.swift in Sources */,
+				A3EC4B282342E199004AAD52 /* LocationHelper.swift in Sources */,
 				A3EC4B1323419E1D004AAD52 /* CameraViewController.swift in Sources */,
 				A3EC4B1523419E2E004AAD52 /* CameraPreviewView.swift in Sources */,
 				A3EC4B1F2341B4E3004AAD52 /* Image+Scaling.swift in Sources */,
 				A3EC4B1C2341B392004AAD52 /* ImageAndRecordViewController.swift in Sources */,
+				A3EC4B2A2342E204004AAD52 /* ExperienceController.swift in Sources */,
 				A3EC4B1023419DF6004AAD52 /* LandingVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +351,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6F637GFXF;
 				INFOPLIST_FILE = "Experiences Screen Recording/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6F637GFXF;
 				INFOPLIST_FILE = "Experiences Screen Recording/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
