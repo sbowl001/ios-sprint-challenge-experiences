@@ -11,7 +11,6 @@
 		A3EC4B032341953B004AAD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EC4B012341953B004AAD52 /* Main.storyboard */; };
 		A3EC4B052341953C004AAD52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3EC4B042341953C004AAD52 /* Assets.xcassets */; };
 		A3EC4B082341953C004AAD52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EC4B062341953C004AAD52 /* LaunchScreen.storyboard */; };
-		A3EC4B1023419DF6004AAD52 /* LandingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B0F23419DF6004AAD52 /* LandingVideoViewController.swift */; };
 		A3EC4B1323419E1D004AAD52 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1223419E1D004AAD52 /* CameraViewController.swift */; };
 		A3EC4B1523419E2E004AAD52 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */; };
 		A3EC4B1A2341A6DD004AAD52 /* MapViewDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */; };
@@ -30,7 +29,6 @@
 		A3EC4B042341953C004AAD52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3EC4B072341953C004AAD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3EC4B092341953C004AAD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3EC4B0F23419DF6004AAD52 /* LandingVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVideoViewController.swift; sourceTree = "<group>"; };
 		A3EC4B1223419E1D004AAD52 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		A3EC4B192341A6DD004AAD52 /* MapViewDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDisplayViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 		A3EC4B1123419DFB004AAD52 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
-				A3EC4B0F23419DF6004AAD52 /* LandingVideoViewController.swift */,
 				A3EC4B1223419E1D004AAD52 /* CameraViewController.swift */,
 				A3EC4B1423419E2E004AAD52 /* CameraPreviewView.swift */,
 			);
@@ -204,7 +201,6 @@
 				A3EC4B1F2341B4E3004AAD52 /* Image+Scaling.swift in Sources */,
 				A3EC4B1C2341B392004AAD52 /* ImageAndRecordViewController.swift in Sources */,
 				A3EC4B2A2342E204004AAD52 /* ExperienceController.swift in Sources */,
-				A3EC4B1023419DF6004AAD52 /* LandingVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

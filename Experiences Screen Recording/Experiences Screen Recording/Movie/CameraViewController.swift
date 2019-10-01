@@ -9,17 +9,44 @@
 import UIKit
 import AVFoundation
 import Photos
+import CoreLocation
 
 
 class CameraViewController: UIViewController {
 
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+         guard let videoURL = videoURL,
+        let recordingURL = recordingURL,
+                    let coordinate = locationHelper.getCurrentLocation()?.coordinate,
+        //            let coordinate =  self.locationHelper.locationManager.location?.coordinate,
+            let image = image else { return }
+                
+            experienceController?.createExperience(title: nil, coordinate: coordinate, videoURL: videoURL, recordingURL: recordingURL, image: image)
+//                LocationHelper.shared.getCurrentLocation { (coordinate) in
+//                    self.experienceController?.createExperience(title: nil, coordinate: coordinate!, videoURL: videoURL, recordingURL: recordingURL, image: image)
+//
+//                }
+            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
+               
+    }
+    let locationHelper = LocationHelper()
+        
+        var experienceController: ExperienceController?
+        var recordingURL: URL?
+        var image: UIImage?
+    //    var imageData: Data?
+        var videoURL: URL?
+    
+    
     @IBOutlet weak var cameraPreviewView: CameraPreviewView!
 
     @IBOutlet weak var recordButton: UIButton!
     
     var captureSession: AVCaptureSession!
     var recordOutput: AVCaptureMovieFileOutput!
-    var videoURL: URL?
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,12 +173,5 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RecordVideo" {
-            guard let destinationVC = segue.destination as? LandingVideoViewController else { return }
-            
-            destinationVC.videoURL = videoURL
-           
-        }
-    }
+     
 }

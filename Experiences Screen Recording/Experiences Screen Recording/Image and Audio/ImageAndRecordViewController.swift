@@ -194,7 +194,7 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
     //MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddVid" {
-            guard let destinationVC = segue.destination as? LandingVideoViewController else { return }
+            guard let destinationVC = segue.destination as? CameraViewController else { return }
             
             destinationVC.experienceController = experienceController
             destinationVC.recordingURL = recordingURL

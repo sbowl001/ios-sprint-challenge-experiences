@@ -140,7 +140,7 @@
                     <navigationItem key="navigationItem" title="New Experience" id="Xwy-sU-TZS">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="zDa-rc-iEb">
                             <connections>
-                                <segue destination="YiO-NJ-0Fw" kind="show" identifier="toAddVid" id="KdR-eE-0UD"/>
+                                <segue destination="x7q-bT-H9M" kind="show" identifier="toAddVid" id="PEI-iu-Zqq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -157,54 +157,19 @@
             </objects>
             <point key="canvasLocation" x="1928.985507246377" y="92.410714285714278"/>
         </scene>
-        <!--Landing Video View Controller-->
-        <scene sceneID="kdQ-hM-Gle">
-            <objects>
-                <viewController id="YiO-NJ-0Fw" customClass="LandingVideoViewController" customModule="Experiences_Screen_Recording" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aG1-7h-UpZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXM-wu-KXp">
-                                <rect key="frame" x="159" y="452" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record Video "/>
-                                <connections>
-                                    <action selector="recordVideoTapped:" destination="YiO-NJ-0Fw" eventType="touchUpInside" id="Xgi-xd-s08"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="5tE-jp-CDF"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ffM-ox-Yhp">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="YkE-Pn-hbZ">
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="YiO-NJ-0Fw" id="veo-nO-5Kf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="x7q-bT-H9M" kind="presentation" identifier="RecordVideo" id="uOP-c9-nqP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ejf-eY-Y8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2613.04347826087" y="91.741071428571431"/>
-        </scene>
         <!--Camera View Controller-->
         <scene sceneID="2vN-Ve-2ox">
             <objects>
                 <viewController id="x7q-bT-H9M" customClass="CameraViewController" customModule="Experiences_Screen_Recording" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5BC-VU-mhL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="994-mT-3f1" customClass="CameraPreviewView" customModule="Experiences_Screen_Recording" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWa-87-f80">
-                                        <rect key="frame" x="172" y="706" width="70" height="70"/>
+                                        <rect key="frame" x="172" y="672" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iWa-87-f80" secondAttribute="height" multiplier="1:1" id="YA5-Vd-vgc"/>
                                             <constraint firstAttribute="height" constant="70" id="dFU-oo-5sd"/>
@@ -232,7 +197,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hMH-nw-4t0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="J72-tu-xPI"/>
+                    <navigationItem key="navigationItem" id="J72-tu-xPI">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="f8S-r8-2b0">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="x7q-bT-H9M" id="Tsk-wa-uob"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraPreviewView" destination="994-mT-3f1" id="RLk-2J-sCF"/>
                         <outlet property="recordButton" destination="iWa-87-f80" id="dLh-89-Vir"/>
@@ -240,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbN-Th-tSe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3344.9275362318845" y="91.741071428571431"/>
+            <point key="canvasLocation" x="2716" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Les-6f-U99">
