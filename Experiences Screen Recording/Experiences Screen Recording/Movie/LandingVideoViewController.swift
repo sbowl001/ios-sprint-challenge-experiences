@@ -56,14 +56,14 @@ class LandingVideoViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let videoURL = videoURL,
             let recordingURL = recordingURL,
-//            let coordinate = CLLocationCoordinate2D?,
+//            let coordinate = locationHelper.getCurrentLocation()?.coordinate,
 //            let coordinate =  self.locationHelper.locationManager.location?.coordinate,
             let image = image else { return }
         
-        
+//        experienceController?.createExperience(title: nil, coordinate: coordinate, videoURL: videoURL, recordingURL: recordingURL, image: image)
         LocationHelper.shared.getCurrentLocation { (coordinate) in
             self.experienceController?.createExperience(title: nil, coordinate: coordinate!, videoURL: videoURL, recordingURL: recordingURL, image: image)
-            
+
         }
          self.dismiss(animated: true, completion: nil)
         

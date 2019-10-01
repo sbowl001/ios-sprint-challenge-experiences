@@ -131,7 +131,7 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
     private func presentSuccessAlert() {
         let alert = UIAlertController(title: "Video Saved!", message: "Your video was successfully saved to your photo library", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) {(_) in
-       
+           
             self.dismiss(animated: true, completion: nil)
                
         }

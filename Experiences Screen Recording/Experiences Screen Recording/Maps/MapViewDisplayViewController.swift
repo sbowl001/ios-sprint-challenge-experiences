@@ -61,11 +61,7 @@ class MapViewDisplayViewController: UIViewController, MKMapViewDelegate {
 //
         guard let destinationVC = segue.destination as? ImageAndRecordViewController else { return }
              destinationVC.experienceController = experienceController
-//        destinationVC.videoURL = videoURL
-//        if let nav = segue.destination as? UINavigationController {
-//            if let vc = nav.visibleViewController as? ImageAndRecordViewController {
-//                vc.experienceController = experienceController
-//            }
+
         }
     }
 //    }
