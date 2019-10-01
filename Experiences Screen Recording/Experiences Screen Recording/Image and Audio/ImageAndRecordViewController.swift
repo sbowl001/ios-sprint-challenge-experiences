@@ -107,13 +107,14 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
                     NSLog("The photo library is not available")
                     return
             }
-            
+//        DispatchQueue.main.async {
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .photoLibrary
             imagePicker.delegate = self
             
             self.present(imagePicker, animated: true, completion: nil)
-        }
+//        }
+    }
         
         private func image(byFiltering image: UIImage) -> UIImage {
             
@@ -132,11 +133,11 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
             
             guard let outputCGImage = context.createCGImage(outputCIImage, from: outputCIImage.extent) else { return image}
             
-            let filteredImage = UIImage(cgImage: outputCGImage)
-            imageData = filteredImage.jpegData(compressionQuality: 1)
+//            let filteredImage = UIImage(cgImage: outputCGImage)
+//            imageData = filteredImage.jpegData(compressionQuality: 1)
             
-            return filteredImage
-//            return UIImage(cgImage: outputCGImage)
+//            return filteredImage
+            return UIImage(cgImage: outputCGImage)
         }
         
         private func updateImage() {
@@ -197,7 +198,7 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
             
             destinationVC.experienceController = experienceController
             destinationVC.recordingURL = recordingURL
-            destinationVC.imageData = imageData
+            destinationVC.image = imageView.image
         }
     }
     
@@ -206,7 +207,7 @@ class ImageAndRecordViewController: UIViewController, AVAudioRecorderDelegate{
     //MARK: Properties Image
     
     var experienceController: ExperienceController?
-    var imageData: Data?
+//var imageData: Data?
     var originalImage: UIImage? {
           didSet {
               guard let originalImage = self.originalImage else {return}

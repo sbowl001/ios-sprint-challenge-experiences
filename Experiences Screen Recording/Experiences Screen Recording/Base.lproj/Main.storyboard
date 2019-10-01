@@ -178,7 +178,11 @@
                         <viewLayoutGuide key="safeArea" id="5tE-jp-CDF"/>
                     </view>
                     <navigationItem key="navigationItem" id="ffM-ox-Yhp">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="YkE-Pn-hbZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="YkE-Pn-hbZ">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="YiO-NJ-0Fw" id="veo-nO-5Kf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="x7q-bT-H9M" kind="presentation" identifier="RecordVideo" id="uOP-c9-nqP"/>

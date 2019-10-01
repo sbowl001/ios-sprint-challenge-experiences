@@ -15,13 +15,13 @@ class Experience: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var videoURL: URL
     var recordingURL: URL
-    var imageData: Data
+    var image: UIImage
     
-    init(title: String, coordinate: CLLocationCoordinate2D, videoURL: URL, recordingURL: URL, imageData: Data) {
+    init(title: String?, coordinate: CLLocationCoordinate2D, videoURL: URL, recordingURL: URL, image: UIImage) {
         self.title = title
         self.coordinate = coordinate
         self.videoURL = videoURL
         self.recordingURL = recordingURL
-        self.imageData = imageData
+        self.image = image
     }
 }

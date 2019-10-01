@@ -49,6 +49,8 @@
 	<string>Requesting access to microphone in order to create a new audio recorder</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Requesting Access to your camera to record videos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Requesting access to location to pinpoint on map</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

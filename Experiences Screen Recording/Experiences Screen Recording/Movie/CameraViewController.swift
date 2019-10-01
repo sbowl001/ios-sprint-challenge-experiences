@@ -142,7 +142,7 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
 //        }
 //
 //        alert.addAction(photosAction)
-//        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     

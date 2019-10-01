@@ -37,7 +37,7 @@ class MapViewDisplayViewController: UIViewController, MKMapViewDelegate {
     }
 
     @IBAction func addButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "toAddXP", sender: sender)
+//        self.performSegue(withIdentifier: "toAddXP", sender: sender)
     }
   
     
@@ -57,13 +57,18 @@ class MapViewDisplayViewController: UIViewController, MKMapViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toAddXP" {
-        if let nav = segue.destination as? UINavigationController {
-            if let vc = nav.visibleViewController as? ImageAndRecordViewController {
-                vc.experienceController = experienceController
-            }
+//
+//
+        guard let destinationVC = segue.destination as? ImageAndRecordViewController else { return }
+             destinationVC.experienceController = experienceController
+//        destinationVC.videoURL = videoURL
+//        if let nav = segue.destination as? UINavigationController {
+//            if let vc = nav.visibleViewController as? ImageAndRecordViewController {
+//                vc.experienceController = experienceController
+//            }
         }
     }
-    }
+//    }
     
     
     let annotationReuseIdentifier = "PostAnnotation"
